@@ -16,7 +16,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t openhackbch2kum6acr.azurecr.io/devopsoh/api-poi:${{ github.sha }}
+        docker build https://github.com/Zenocolo/openhack-devops-team/blob/master/apis/poi/web/Dockerfile -t openhackbch2kum6acr.azurecr.io/devopsoh/api-poi:${{ github.sha }}
         docker push openhackbch2kum6acr.azurecr.io/devopsoh/api-poi:${{ github.sha }}     
 
     - uses: azure/webapps-deploy@v2
